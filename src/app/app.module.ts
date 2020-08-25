@@ -3,16 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TodoModule } from './todo/todo.module';
+import { HoverEffectPipe } from './hover-effect.pipe';
+import { TasksComponent } from './tasks/tasks.component';
 
 @NgModule({
+  // All component
   declarations: [
-    AppComponent
+    AppComponent,
+    HoverEffectPipe,
+    TasksComponent
   ],
+
+  //All imported modules
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    TodoModule
   ],
+
+  //All services
   providers: [],
+
+  //Starting point
   bootstrap: [AppComponent]
 })
 export class AppModule { }
