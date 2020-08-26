@@ -5,39 +5,20 @@
 List of Completed Tasks :<br>
 <app-completed-tasks></app-completed-tasks><br>
 
-<button (click)="readMe()">CLick me</button><br>
+<!-- Interpolation -->
+Hello {{firstname}}
 
-<div *ngIf='showMsg then showIfMsg else showElseMsg'></div>
-<ng-template #showIfMsg>Hello from *ngIf</ng-template>
-<ng-template #showElseMsg>Hello from else ng-template</ng-template>
-<br><br>
+<!-- Property Binding -->
+<div [ngStyle]='{color:"red"}'>hello from Property Binding</div>
+<div [ngClass]="'txtClass'">hello from Property Binding</div><br>
 
-<div [ngSwitch]='switchValue'>
-    <div *ngSwitchCase='1'>Switch Case #1</div>
-    <div *ngSwitchCase='2'>Switch Case #2</div>
-    <div *ngSwitchCase='3'>Switch Case #3</div>
-    <div *ngSwitchDefault>Switch Default</div>
-</div>
+<!-- Attrbute Binding -->
+<span [attr.pattern]="'contrast'">Hello From Attribute Binding</span><br><br> <!--Here check code using inspect element you get <span> having attribute pattern with value contrast -->
 
-<div [ngSwitch]='switchName'>
-    <div *ngSwitchCase="'Pramod'">Username : Pramod</div> <!--Must put '' inside ""-->
-    <div *ngSwitchCase="'Shenkar'">Username : Shenkar</div>
-    <div *ngSwitchDefault>Username : Undefind</div>
-</div><br>
+<!-- Event Binding -->
+<button (click)='eventFunction("Prmd1998")'>Event Button</button><br><br>
 
-    <div *ngFor="let item of users; index as i">
-        {{i}} : {{item}}
-    </div>
-
-    <!-- We can use first, last, even, odd instead of index. But these all give Bool value ie true or false -->
-
-
-
-<div [ngStyle]='{color:"red"}'>Hello from [ngStyle] static value</div>
-<div [ngStyle]='{color:txtColor}'>Hello from [ngStyle] dynamic value defined in app.component</div><br>
-
-<div [ngClass]="'txtClass'">Hello From [ngClass]</div> <!--txtClass defined in app.component.css-->
-<div [ngClass]="['txtClass','bgClass']">Hello From array of [ngClass]</div> <!--We can apply two css classes to one object by passing arry of classes-->
-
-
+<!-- Two way data binding -->
+Addd text : (view->component) : <input [(ngModel)]='txtVariable'/> <!--Here firstmodule is defined in app.compenent & text in textbox get assigned to firstname ie. view to component & in next line we print it using {{firstname}} ie. component to view-->    
+<br>Show text : (component->view) : {{txtVariable}}  
 <router-outlet></router-outlet>

@@ -7,14 +7,10 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'oneConversion';
-
-  showMsg = true;
-
-  switchValue = 4;
-  switchName = 'aaaa';
-
-  users = ['Akash','Pramod','Shubham'];
-
-  txtColor = 'green';
-  readMe(){console.log('Button clicked')};
+  firstname = 'Pramod';
+  eventFunction(id)
+  {
+    alert('Welcome to USER : '+id);
+  }   
+  txtVariable = '';
 }

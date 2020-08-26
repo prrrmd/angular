@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TodoModule } from './todo/todo.module';
 import { HoverEffectPipe } from './hover-effect.pipe';
 import { TasksComponent } from './tasks/tasks.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   // All component
@@ -19,6 +20,7 @@ import { TasksComponent } from './tasks/tasks.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     TodoModule
   ],
 
