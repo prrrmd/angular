@@ -1,24 +1,32 @@
-<h1 class="bg-primary">Welcome to {{ title }}</h1>
+<body>
+  <h2 class='bg-primary'><b>Welcome to {{ title }}</b></h2>
+  <div>
 
-<app-tasks> </app-tasks>
+  <!-- Built in Pipes -->
 
-List of Completed Tasks :<br>
-<app-completed-tasks></app-completed-tasks><br>
+    User : {{user | json}} <br><br>
 
-<!-- Interpolation -->
-Hello {{firstname}}
+    Name : {{user.name | uppercase}} <br><br>
 
-<!-- Property Binding -->
-<div [ngStyle]='{color:"red"}'>hello from Property Binding</div>
-<div [ngClass]="'txtClass'">hello from Property Binding</div><br>
+    Bdate : {{user.birthdate | date }} <br>
+    Bdate : {{user.birthdate | date :'fullDate' }} <br>
+    Bdate : {{user.birthdate | date :'dd-mmmm-yyyy' }} <br><br>
 
-<!-- Attrbute Binding -->
-<span [attr.pattern]="'contrast'">Hello From Attribute Binding</span><br><br> <!--Here check code using inspect element you get <span> having attribute pattern with value contrast -->
+    Total :     {{user.salary | currency}} <br>
+    In Rupees : {{user.salary | currency : 'INR'}} <br>
+    In Rupees : {{user.salary | currency : 'INR' : 'code'}} <br>
+    In 1 deci : {{user.salary | currency : 'INR' :'symbol':'3.0-1'}} <br><br>
 
-<!-- Event Binding -->
-<button (click)='eventFunction("Prmd1998")'>Event Button</button><br><br>
+  <!-- Parameteried Pipe -->
+  <!-- In above examples, fullDate, dd-mmmm-yyyy, INR, code ,3.0-1 all are the parameters -->
 
-<!-- Two way data binding -->
-Addd text : (view->component) : <input [(ngModel)]='txtVariable'/> <!--Here firstmodule is defined in app.compenent & text in textbox get assigned to firstname ie. view to component & in next line we print it using {{firstname}} ie. component to view-->    
-<br>Show text : (component->view) : {{txtVariable}}  
+  <!--Chaining Pipes-->
+  Bdate : {{user.birthdate | date:'MMM' | uppercase }} <br><br>
+
+  <!-- Custom Pipes -->
+  Address : {{user.address | highlight:user.address:user.pincode}}
+
+  </div>
+  <br><br><br><br><br><br><br>
 <router-outlet></router-outlet>
+</body>

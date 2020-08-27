@@ -7,10 +7,12 @@ import { Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'oneConversion';
-  firstname = 'Pramod';
-  eventFunction(id)
-  {
-    alert('Welcome to USER : '+id);
-  }   
-  txtVariable = '';
+
+  user = {
+    name : 'Pramod',
+    birthdate : '10/2/1998',
+    salary: 7000.56,
+    address: 'Akole',
+    pincode: 'MH17'
+  };
 }
