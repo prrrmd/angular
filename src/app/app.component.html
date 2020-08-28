@@ -1,32 +1,9 @@
-<body>
-  <h2 class='bg-primary'><b>Welcome to {{ title }}</b></h2>
-  <div>
-
-  <!-- Built in Pipes -->
-
-    User : {{user | json}} <br><br>
-
-    Name : {{user.name | uppercase}} <br><br>
-
-    Bdate : {{user.birthdate | date }} <br>
-    Bdate : {{user.birthdate | date :'fullDate' }} <br>
-    Bdate : {{user.birthdate | date :'dd-mmmm-yyyy' }} <br><br>
-
-    Total :     {{user.salary | currency}} <br>
-    In Rupees : {{user.salary | currency : 'INR'}} <br>
-    In Rupees : {{user.salary | currency : 'INR' : 'code'}} <br>
-    In 1 deci : {{user.salary | currency : 'INR' :'symbol':'3.0-1'}} <br><br>
-
-  <!-- Parameteried Pipe -->
-  <!-- In above examples, fullDate, dd-mmmm-yyyy, INR, code ,3.0-1 all are the parameters -->
-
-  <!--Chaining Pipes-->
-  Bdate : {{user.birthdate | date:'MMM' | uppercase }} <br><br>
-
-  <!-- Custom Pipes -->
-  Address : {{user.address | highlight:user.address:user.pincode}}
-
-  </div>
-  <br><br><br><br><br><br><br>
+<h2 class='bg-primary'><b>Welcome to {{ title }}</b></h2>
+<div>
+<ul>
+  <li><a href="products">Products</a></li>
+  <li><a href="product-view">Product-View</a></li>
+  <li><a href="product-edit">Product-Edit</a></li>
+</ul>
 <router-outlet></router-outlet>
-</body>
+</div>

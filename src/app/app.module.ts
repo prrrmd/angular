@@ -8,6 +8,15 @@ import { HoverEffectPipe } from './hover-effect.pipe';
 import { TasksComponent } from './tasks/tasks.component';
 import { FormsModule } from '@angular/forms';
 import { HighlightPipe } from './highlight.pipe';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { ProductsComponent } from './products/products.component';
+import { ProductViewComponent } from './product-view/product-view.component';
+import { ProductEditComponent } from './product-edit/product-edit.component';
+import { ProductIdComponent } from './product-id/product-id.component';
+import { OrderViewComponent } from './order-view/order-view.component';
+import { SearchComponent } from './search/search.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AdminHomeComponent } from './admin-home/admin-home.component';
 
 @NgModule({
   // All component
@@ -15,7 +24,15 @@ import { HighlightPipe } from './highlight.pipe';
     AppComponent,
     HoverEffectPipe,
     TasksComponent,
-    HighlightPipe
+    HighlightPipe,
+    ProductsComponent,
+    ProductViewComponent,
+    ProductEditComponent,
+    ProductIdComponent,
+    OrderViewComponent,
+    SearchComponent,
+    PageNotFoundComponent,
+    AdminHomeComponent
   ],
 
   // All imported modules
@@ -27,7 +44,7 @@ import { HighlightPipe } from './highlight.pipe';
   ],
 
   // All services
-  providers: [],
+  providers: [ ],
 
   // Starting point
   bootstrap: [AppComponent]
