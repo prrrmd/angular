@@ -1,3 +1,4 @@
+import { SigninComponent } from './signin/signin.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminGuardGuard } from './admin-guard.guard';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -11,8 +12,9 @@ import { ProductIdComponent } from './product-id/product-id.component';
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: '', redirectTo: 'signin', pathMatch: 'full' },
   { path: 'admin', component: AdminHomeComponent, canActivate: [AdminGuardGuard] },
+  { path: 'signin', component: SigninComponent },
   // { path: 'products', component: ProductsComponent },
   {
     path: 'products',

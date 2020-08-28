@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { TodoModule } from './todo/todo.module';
 import { HoverEffectPipe } from './hover-effect.pipe';
 import { TasksComponent } from './tasks/tasks.component';
-import { FormsModule } from '@angular/forms';
 import { HighlightPipe } from './highlight.pipe';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { ProductsComponent } from './products/products.component';
@@ -17,6 +16,9 @@ import { OrderViewComponent } from './order-view/order-view.component';
 import { SearchComponent } from './search/search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { SigninComponent } from './signin/signin.component';
+
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   // All component
@@ -32,7 +34,8 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     OrderViewComponent,
     SearchComponent,
     PageNotFoundComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    SigninComponent
   ],
 
   // All imported modules
