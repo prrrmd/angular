@@ -12,62 +12,58 @@ export class CheckoutComponent implements OnInit {
   checkoutForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
-    // without validation
-    /*this.checkoutForm = formbuilder.group({
-        email: new FormControl(),  // this must be same as the value passed in formcontrolname in email textbox
-        quantity: new FormControl()
-    });*/
-
     // with validation
     this.checkoutForm = formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      quantity: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]]
+      quantity: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(8)]],
+
+      items: this.formBuilder.array([
+
+        // simple form array with new elements : 3 product
+        /*new FormControl('ASUS_ROG'),
+        new FormControl('ASUS_0XD'),
+        new FormControl('ASUS_XENPHONE')*/
+
+        // nested form ontrols in array ie items[{id1,name1},{id2,name2}
+        this.formBuilder.group({
+          itemId: ['1'],
+          itemName: ['ASUS_0XD']
+        })
+
+      ])
     });
 
    }
 
   ngOnInit(): void {
-    // Set value using setValue() : must have to pass all filed
-    /*this.checkoutForm.setValue({
-      email: 'user@xyz.com',
-      quantity: '234'
-    });*/
-
-    // Set value using patchValue() : can ommit/leave any filed.
-    /*this.checkoutForm.patchValue({
-      quantity: '234'
-    });*/
-
-    // use valueChanges() to track the values ie. here we take email example
-    /*this.checkoutForm.get('email').valueChanges.subscribe(data => {
-      console.log(data);
-    });*/
-
-      // valueChanges() to track the any values from all.
-    /*this.checkoutForm.valueChanges.subscribe(data => {
-      console.log(data);
-    });*/
-
-    // use statusChanges() to track the status of values (valid or invalid) ie. here we take email example
-    /*this.checkoutForm.get('email').statusChanges.subscribe(data => {
-      console.log(data);
-    });*/
-
-    // use statusChange() to track status of all value
-    /*this.checkoutForm.statusChanges.subscribe(data => {
-      console.log(data);
-    });*/
   }
 
-  // tslint:disable-next-line: typedef
   postData(){
     console.log(this.checkoutForm.value.email);
     console.log(this.checkoutForm.value.quantity);
   }
 
-  // tslint:disable-next-line: typedef
   resetForm(){
     this.checkoutForm.reset();
+  }
+
+  get items() {
+    return this.checkoutForm.get('items') as FormArray;
+  }
+
+  addRow()
+  {
+    const itemLen = this.items.length;
+    const newItem = this.formBuilder.group({
+      itemId: [itemLen + 1],
+      itemName: ['']
+    });
+    this.items.push(newItem);
+  }
+
+  removeRow(itemId)
+  {
+    this.items.removeAt(itemId);
   }
 
 }
