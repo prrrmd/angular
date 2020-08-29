@@ -1,3 +1,4 @@
+import { CheckoutComponent } from './checkout/checkout.component';
 import { SigninComponent } from './signin/signin.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminGuardGuard } from './admin-guard.guard';
@@ -12,9 +13,10 @@ import { ProductIdComponent } from './product-id/product-id.component';
 import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'signin', pathMatch: 'full' },
+  { path: '', redirectTo: 'checkout', pathMatch: 'full' },
   { path: 'admin', component: AdminHomeComponent, canActivate: [AdminGuardGuard] },
-  { path: 'signin', component: SigninComponent },
+  { path: 'signin', component: SigninComponent }, // Template driven form
+  { path: 'checkout', component: CheckoutComponent}, // Reactive form
   // { path: 'products', component: ProductsComponent },
   {
     path: 'products',

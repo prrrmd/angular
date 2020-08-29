@@ -1,0 +1,15 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="postData()" >
+  <div class="form-group">
+    <input type="email" placeholder="email" class="form-control col-md-3" formControlName="email">
+    <small *ngIf="checkoutForm.get('email').touched && checkoutForm.get('email').hasError('required')">Ente Email<br><br></small>
+    <small *ngIf="checkoutForm.get('email').touched && checkoutForm.get('email').hasError('email')">Enter Valid Email<br><br></small>
+
+    <input type="text" placeholder="quantity" class="form-control col-md-3" formControlName="quantity">
+    <small *ngIf="checkoutForm.get('quantity').touched && checkoutForm.get('quantity').hasError('required')" >Enter Password<br><br></small>
+    <small *ngIf="checkoutForm.get('quantity').touched && checkoutForm.get('quantity').hasError('minlength')" >Enter min 6 character Password<br><br></small>
+    <small *ngIf="checkoutForm.get('quantity').touched && checkoutForm.get('quantity').hasError('maxlength')" >Enter max 8 character Password<br><br></small>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!checkoutForm.valid">checkout</button>
+    <button type="submit" class="btn btn-secondary" (click)="resetForm()" >clear</button>
+  </div>
+</form>

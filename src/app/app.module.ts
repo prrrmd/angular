@@ -18,7 +18,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { SigninComponent } from './signin/signin.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { from } from 'rxjs';
 
 @NgModule({
   // All component
@@ -35,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     SearchComponent,
     PageNotFoundComponent,
     AdminHomeComponent,
-    SigninComponent
+    SigninComponent,
+    CheckoutComponent,
   ],
 
   // All imported modules
@@ -43,7 +46,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    TodoModule
+    TodoModule,
+    ReactiveFormsModule
   ],
 
   // All services
