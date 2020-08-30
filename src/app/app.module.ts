@@ -21,6 +21,8 @@ import { SigninComponent } from './signin/signin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { from } from 'rxjs';
+import { ObservableComponent } from './observable/observable.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   // All component
@@ -39,6 +41,8 @@ import { from } from 'rxjs';
     AdminHomeComponent,
     SigninComponent,
     CheckoutComponent,
+    ObservableComponent,
+    ContactsComponent,
   ],
 
   // All imported modules
