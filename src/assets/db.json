@@ -1,0 +1,29 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "firstname": "Pradnya",
+      "lastname": "Aher"
+    },
+    {
+      "id": 2,
+      "firstname": "Shubham",
+      "lastname": "Shelke"
+    },
+    {
+      "id": 3,
+      "firstname": "Dipali",
+      "lastname": "Sahane"
+    },
+    {
+      "id": 4,
+      "firstname": "Pramod",
+      "lastname": "Shekar"
+    },
+    {
+      "id": 5,
+      "firstname": "Ajinkya",
+      "lastname": "mhaske"
+    }
+  ]
+}

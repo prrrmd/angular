@@ -24,6 +24,9 @@ import { from } from 'rxjs';
 import { ObservableComponent } from './observable/observable.component';
 import { ContactsComponent } from './contacts/contacts.component';
 
+// 2.1 import module
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   // All component
   declarations: [
@@ -51,7 +54,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     AppRoutingModule,
     FormsModule,
     TodoModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule // 2.2 import module
   ],
 
   // All services

@@ -1,12 +1,19 @@
-<p>contacts list :</p>
+<p>Contacts List :</p>
 
 Get Array from component <br>
 <span *ngFor="let contact of contactList" >
-  {{contact.id}} | {{contact.name}} <br>
+  {{contact.id}} | {{contact.firstname}} {{contact.lastname}}<br>
 </span>
 <br><br>
 
-Get Contacts by directly calling method from service in inspect element<br><br>
 
-<button class="btn btn-primary" (click)="contactService.getConstactsMethod2()" >GET CONTACT</button>
+<p>Create new contacts</p>
+<button (click)="addNewContact()" >Add contact</button>
 
+<button (click)="UpdateContact(6);"> Update contact</button>
+<button (click)="deleteContact(6);"> Delete contact</button>
+
+
+<!--Get Contacts by directly callng method from service in inspect element<br><br>
+
+<button class="btn btn-primary" (click)="contactService.getConstactsMethod2()" >GET CONTACT</button> -->

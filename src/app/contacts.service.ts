@@ -1,33 +1,33 @@
-// 1. created service
-
 import { Injectable } from '@angular/core';
+import { HttpClient  } from '@angular/common/http'; // 3.1 import http & inject it
 
 @Injectable({
-  providedIn: 'root' // Avalliable at root level ie To All.
+  providedIn: 'root'
 })
 export class ContactsService {
 
-  constructor() { }
-  // tslint:disable-next-line: typedef
-  getConstacts() // created method which return json array object. we can access these for any component
+  constructor(private httpClient: HttpClient) { } // 3.2 injection in ctr
+
+  getContacts()
   {
-    const contactList = [
-      { id: 1, name: 'Pramod' },
-      { id: 2, name: 'Shubhm' },
-      { id: 3, name: 'Aakash' },
-      { id: 4, name: 'Jayant'},
-    ];
-    return contactList;
+    // 3.3 get method
+    // URL passed to get() Endpoint respose data.
+    return this.httpClient.get('http://localhost:3000/contacts'); // this will always return a observable So we have to subscribe it
   }
 
-  getConstactsMethod2() // created method which return json array object. we can access these for any component
+  createContact(createResourse)
   {
-    const contactList = [
-      { id: 1, name: 'Pramod' },
-      { id: 2, name: 'Shubhm' },
-      { id: 3, name: 'Aakash' },
-      { id: 4, name: 'Jayant'},
-    ];
-    console.log(contactList) ;
+    return this.httpClient.post('http://localhost:3000/contacts', createResourse);
   }
+
+  updateContact(id, updateResourse)
+  {
+    return this.httpClient.put('http://localhost:3000/contacts/'+id, updateResourse);
+  }
+
+  deleteContact(id)
+  {
+    return this.httpClient.delete('http://localhost:3000/contacts/'+id);
+  }
+
 }
